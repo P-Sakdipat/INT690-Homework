@@ -1,0 +1,19 @@
+@layouts.master({ title: "New Post" })
+<h1>New Post</h1>
+<form class="ui form" action="{{route('posts.store')}}" method="post">
+    {{ csrfField() }}
+
+    <div class="field">
+        <label>Title</label>
+        <input type="text" name="title" size="50" required>
+    </div>
+
+    <div class="field">
+        <label>Body</label>
+        <textarea name="body" rows="5" cols="50" required></textarea>
+    </div>
+
+    <input class="ui button" type="submit" value="Save">&nbsp;
+    <a class="ui button" href="{{route('posts.home')}}">Cancel</a>
+</form>
+@end

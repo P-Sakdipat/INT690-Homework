@@ -1,0 +1,20 @@
+@layouts.master({ title: "edit post" })
+    <h1>Edit Post</h1>
+    <form class="ui form" action="{{route('posts.update',{id:post.id})}}" method="post">
+        {{ csrfField()}}
+        
+            <div class="field">
+                <label>Title</label>
+                <input type="text" name="title" value="{{post.title}}" size="50">
+            </div>
+            <div class="field">
+                <label>Body</label>
+                <textarea name="body" rows="5" cols="50">{{post.body}}</textarea>
+            </div>
+        
+           
+        
+        <input class="ui button" type="submit" value="Save">
+                    <a class="ui button" href="{{route('posts.home')}}">Cancel</a>
+    </form>
+@end
